@@ -1,2 +1,11 @@
-// Add the required props
-export const UserInfo = () => <>UserInfo markup</>;
+export const UserInfo = ({ user }) => {
+  if (user === null) {
+    return null;
+  }
+
+  return (
+    <a className="UserInfo" href={`mailo:${user.email}`}>
+      {user.name}
+    </a>
+  );
+};
